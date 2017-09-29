@@ -4,17 +4,20 @@
   const CleanWebpackPlugin = require('clean-webpack-plugin');
   const ManifestPlugin = require('webpack-manifest-plugin');
 
+
   module.exports = {
     entry: {
-      app: './src/app.js',
-      print: './src/print.js'
+      app: './src/app.js'
     },
     devtool: 'inline-source-map',
+    devServer: {
+      contentBase: './dist'
+    },
     plugins: [
       new ManifestPlugin(),
       new CleanWebpackPlugin(['dist/*.*']),
       new HtmlWebpackPlugin({
-        title: 'Output Management'
+        title: 'A mi gusto'
       })
     ],
     output: {
